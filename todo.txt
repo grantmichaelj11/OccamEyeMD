@@ -1,0 +1,30 @@
+06/30/2025
+[x] Create a simulation enviroment
+	-> Read an xyz file
+[x] Look into python wrappers?
+	-> pybind11 looks promising and 'easy' to use
+	-> Write a function -> create a python binding for it
+		-> We can run everything in python!
+[x] GOAL: Write a function that reads in atoms and coordinates from an xyz file and call it in Python
+
+DATE ACCOMPLISHED
+[] Redefine the class that loads in external files
+	-> I want to be able to select what type of file gets read (PDB, xyz, other types?)
+	-> Add functionality for typical MD
+[] Determine how I want to visualize the simulations
+	-> Novel approach
+	-> VMD trajectories
+	-> OVITO
+	-> VESTA
+
+[] Create GAFF style atom types
+[] Find FF parameters for GAFF
+[] Create simulation box
+[] Create boundary conditions
+[] Time Integration
+[] Atom restraints
+[] Combine to run simulation
+[] Implement Functionals
+[] Use funtionals to run simulations
+[] Store MD simulation trajectory in xyz files to run DFT for FF generation
+[] Implement MLP (tensorflow)
