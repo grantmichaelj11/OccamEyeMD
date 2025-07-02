@@ -7,18 +7,22 @@
 		-> We can run everything in python!
 [x] GOAL: Write a function that reads in atoms and coordinates from an xyz file and call it in Python
 
-DATE ACCOMPLISHED
-[] Redefine the class that loads in external files
+07/02/2025
+[x] Redefine the class that loads in external files
 	-> I want to be able to select what type of file gets read (PDB, xyz, other types?)
 	-> Add functionality for typical MD
-[] Determine how I want to visualize the simulations
+[x] Determine how I want to visualize the simulations
 	-> Novel approach
 	-> VMD trajectories
 	-> OVITO
 	-> VESTA
+[x] Find FF parameters for GAFF
 
-[] Create GAFF style atom types
-[] Find FF parameters for GAFF
+DATE ACCOMPLISHED
+[] Convert .pdb to gaff
+[] Read Forcefield
+
+
 [] Create simulation box
 [] Create boundary conditions
 [] Time Integration
