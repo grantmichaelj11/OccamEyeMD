@@ -1,10 +1,12 @@
-#include "read_xyz.hpp"
+#include "load_system.hpp"
 using namespace std;
 
-vector<tuple<string, double, double, double>> read_xyz() { //Need to add a string as an argument!
+
+// .xyz files will be used for DFT inputs or AIMD
+vector<tuple<string, double, double, double>> read_xyz(string filename) { //Need to add a string as an argument!
 	// Open file and store variable for the current line
 	string currentLine;
-	fstream MyFile("SQOH2ME.xyz");
+	fstream MyFile(filename);
 
 	// Read first line -> save number of atoms
 	getline(MyFile, currentLine);
@@ -48,8 +50,35 @@ vector<tuple<string, double, double, double>> read_xyz() { //Need to add a strin
 
 }
 
+//std::vector<std::tuple<std::string, int, string, string, string, int, double, double, double, double, double, string>> read_pdb(string filename) {
+
+//For running MD or AIMD
+string read_pdb(string filename, string simulation_package) {
+	try {
+		if (simulation_package == "amber" || "aimd") {
+			cout << "amber";
+		} else {
+				throw exception;
+			}
+	}
+
+	catch (...) {
+		return "Error - invalid simulation package"
+	}
+	
+	// if amber do the conversion
+	// I don't need to copy Amber's exact parameter file because I am running it from my system
+	//
+
+	// if aimd do the conversion
+
+	return filename;
+}
+
+
 PYBIND11_MODULE(load_atoms, m) {
-	m.def("read_xyz", &read_xyz, "Load an XYZ File into Vector format");
+	m.def("read_xyz", &read_xyz, "Load an XYZ file into simulation");
+	m.def("read_pdb", &read_pdb, "Load a PDB file into simulation");
 }
 
 
